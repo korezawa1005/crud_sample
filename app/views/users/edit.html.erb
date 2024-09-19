@@ -1,0 +1,17 @@
+<h1>編集<h1>
+
+<%= form_with model: @user, url: "/users/#{@user.id}", data:{ turbo: false } ,method: :patch do |form| %>
+  <p>
+    <%= form.label :name, "お名前" %>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :age, "年齢" %>
+    <%= form.number_field :age %>
+  </p>
+
+  <div>
+    <%= form.submit "更新" %>
+  </div>
+<% end %>

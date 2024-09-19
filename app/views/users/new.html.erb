@@ -1,0 +1,17 @@
+<h1>新規投稿</h1>
+
+<%= form_with model: @user, data:{ turbo: false } do |form| %>
+  <p>
+   <%= form.label :name, "お名前" %>
+   <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :age, "年齢" %>
+    <%= form.number_field :age %>
+  </p>
+
+  <div>
+    <%= form.submit "投稿" %>
+  </div>
+<% end %>

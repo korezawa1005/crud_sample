@@ -1,8 +1,21 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # 一覧画面へのルーティング
+  get "/users" => "users#index"
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
+  # 新規投稿画面へのルーティング
+  get "/users/new" => "users#new"
+
+  get "/users/:id" => "users#show"
+
+  get "/users/:id/edit" => "users#edit"
+  # 新規登録を行うためのルーティング
+  post "/users" => "users#create"
+
+  patch "/users/:id" => "users#update"
+
+  delete "/users/:id" => "users#destroy"
+
+
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Render dynamic PWA files from app/views/pwa/*
